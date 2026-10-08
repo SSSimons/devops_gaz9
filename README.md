@@ -6,8 +6,7 @@ NAT-шлюз и Kubernetes с доступом через ingress.
 **🧰 Стек:** Python · FastAPI · Docker Compose · Prometheus · Alertmanager · kubeadm · Flannel · Traefik  
 **💻 Стенд:** VMware Workstation Pro · Ubuntu Server 22.04
 
-> 📖 [Полная инструкция по развёртыванию](docs/SETUP.md)  
-> 📸 Ниже оставлены места для моих скриншотов с результатами проверок.
+> 📖 [Полная инструкция по развёртыванию](docs/SETUP.md) 
 
 ## 🗺️ Схема стенда
 
