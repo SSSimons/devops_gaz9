@@ -65,7 +65,7 @@ curl -i http://192.168.76.10:8000/health
 ## 🐧 systemd - пункт b
 
 Приложение запускается от отдельного системного пользователя `labapp`.
-Код находится в `/opt/service-lab`, сервис включён в автозапуск.
+Код находится в `/opt/service-lab`, сервис включён в автозапуск через systemctl.
 
 ```bash
 sudo systemctl status service-lab --no-pager
