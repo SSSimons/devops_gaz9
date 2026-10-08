@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="184" viewBox="0 0 960 184">
+  <title>Место для скриншота: Kubernetes</title>
+  <rect x="1" y="1" width="958" height="182" rx="12" fill="#f6f8fa" stroke="#d0d7de"/>
+  <rect x="14" y="14" width="932" height="156" rx="8" fill="none" stroke="#c0ccd8" stroke-dasharray="6 5"/>
+  <g transform="translate(459 27)" fill="none" stroke="#57606a" stroke-width="2">
+    <rect x="0" y="6" width="42" height="27" rx="4"/>
+    <path d="M11 6 L15 0 H27 L31 6"/>
+    <circle cx="21" cy="20" r="7"/>
+  </g>
+  <text x="480" y="88" text-anchor="middle" font-family="Arial,sans-serif" font-size="21" font-weight="600" fill="#24292f">Kubernetes</text>
+  <text x="480" y="115" text-anchor="middle" font-family="Arial,sans-serif" font-size="15" fill="#57606a">Три Ready-ноды и две готовые реплики</text>
+  <text x="480" y="143" text-anchor="middle" font-family="Arial,sans-serif" font-size="13" fill="#0969da">Место для моего скриншота</text>
+</svg>

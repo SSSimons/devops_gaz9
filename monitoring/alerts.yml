@@ -1,0 +1,36 @@
+groups:
+  - name: service-lab
+    rules:
+      - alert: AppUnavailable
+        expr: up{job="app"} == 0
+        for: 1m
+        labels:
+          severity: critical
+        annotations:
+          summary: "Метрики приложения недоступны"
+          description: "Prometheus не может получить метрики от {{ $labels.instance }} больше минуты."
+
+      - alert: AppHealthFailed
+        expr: probe_success{job="app-health"} == 0
+        for: 1m
+        labels:
+          severity: warning
+        annotations:
+          summary: "Проверка /health не прошла"
+          description: "/health не возвращает 200 OK. Проверь приложение, ping и NAT."
+
+      - alert: HealthProbeUnavailable
+        expr: up{job="app-health"} == 0
+        for: 1m
+        labels:
+          severity: critical
+        annotations:
+          summary: "Blackbox Exporter не отвечает"
+
+      - alert: AlertmanagerUnavailable
+        expr: up{job="alertmanager"} == 0
+        for: 1m
+        labels:
+          severity: warning
+        annotations:
+          summary: "Alertmanager не отвечает. Проверь этот алерт в Prometheus"

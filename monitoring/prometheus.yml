@@ -1,0 +1,43 @@
+global:
+  scrape_interval: 15s
+  evaluation_interval: 15s
+  external_labels:
+    environment: vmware-lab
+
+rule_files:
+  - /etc/prometheus/alerts.yml
+
+alerting:
+  alertmanagers:
+    - static_configs:
+        - targets: [alertmanager:9093]
+
+scrape_configs:
+  - job_name: app
+    metrics_path: /metrics
+    static_configs:
+      - targets: [app:8000]
+
+  - job_name: app-health
+    metrics_path: /probe
+    scrape_timeout: 8s
+    params:
+      module: [http_health]
+    static_configs:
+      - targets: [http://app:8000/health]
+    relabel_configs:
+      - source_labels: [__address__]
+        target_label: __param_target
+      - source_labels: [__param_target]
+        target_label: instance
+      - target_label: __address__
+        replacement: blackbox:9115
+
+  - job_name: prometheus
+    static_configs:
+      - targets: [localhost:9090]
+
+  - job_name: alertmanager
+    static_configs:
+      - targets: [alertmanager:9093]
+

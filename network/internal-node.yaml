@@ -1,0 +1,14 @@
+# Для каждой VM укажи свой IP и имя интерфейса вместо ens33.
+network:
+  version: 2
+  renderer: networkd
+  ethernets:
+    ens33:
+      dhcp4: false
+      dhcp6: false
+      addresses: [192.168.76.10/24]
+      routes:
+        - to: default
+          via: 192.168.76.254
+      nameservers:
+        addresses: [77.88.8.8, 1.1.1.1]

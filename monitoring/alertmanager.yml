@@ -1,0 +1,12 @@
+global:
+  resolve_timeout: 1m
+route:
+  receiver: lab-ui
+  group_by: [alertname, instance]
+  group_wait: 10s
+  group_interval: 1m
+  repeat_interval: 1h
+receivers:
+  - name: lab-ui
+# Алерты видны в интерфейсе Alertmanager.
+# Для уведомлений добавь сюда email, Telegram или webhook.
